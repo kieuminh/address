@@ -17,12 +17,13 @@ function App() {
     email: '',
     telephone: '',
   })
-  const [validationMsg, setValidationMsg] = useState('')
+
   const handleChange = (event) => {
     const name = event.target.name
     const value = event.target.value
     setInputs((values) => ({ ...values, [name]: value }))
   }
+  const [validationMsg, setValidationMsg] = useState('')
 
   const validateAll = () => {
     const msg = {}
@@ -70,17 +71,20 @@ function App() {
         <hr />
       </div>
       <form onSubmit={handleSubmit} className="max-w-[1000px] mr-auto ml-auto">
-        <div className="flex flex-col pt-4 pb-4 max-w-[40%]">
+        <div className="flex flex-col pt-10 pb-4 max-w-[35%]">
           <label className="flex justify-between">
             <p className="text-lg font-semibold">Country</p>
-            <input
-              type="text"
-              placeholder="Text"
+            <select
               name="country"
               value={inputs.country || ''}
               onChange={handleChange}
-              className="border-2 rounded-md min-w-[10%] pl-2 h-9"
-            />
+              className="border-2 rounded-md min-w-[10%] pl-5 h-9"
+            >
+              <option value="australia">Australia</option>
+              <option value="thailand">Thailand</option>
+              <option value="newszeland">Newzweland</option>
+              <option value="vietnam">VietNam</option>
+            </select>
           </label>
         </div>
         <div className="flex flex-col pt-6">
