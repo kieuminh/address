@@ -72,8 +72,11 @@ function App() {
         <h1 className="text-3xl font-semibold ">Add Address</h1>
         <hr />
       </div>
-      <form onSubmit={handleSubmit} className="max-w-[1000px] mr-auto ml-auto">
-        <div className="flex flex-col pt-10 pb-4 max-w-[35%]">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-[1000px] mr-auto ml-auto pl-2 pr-2 lg:pl-0 md:pr-0"
+      >
+        <div className="flex flex-col pt-10 pb-4 md:max-w-[35%] max-w-[80%]">
           <label className="flex justify-between">
             <p className="text-lg font-semibold">Country</p>
             <select
@@ -89,7 +92,7 @@ function App() {
             </select>
           </label>
         </div>
-        <div className="flex flex-col pt-6">
+        <div className="flex flex-col pt-6 ">
           <div className="flex min-w-[100%] pb-8">
             <label className="min-w-[50%]">
               <p className="pb-2">Company name</p>
@@ -99,7 +102,7 @@ function App() {
                 name="companyName"
                 value={inputs.companyName || ''}
                 onChange={handleChange}
-                className={`border-2 rounded-md min-w-[90%] pl-2 h-9`}
+                className="border-2 rounded-md md:min-w-[90%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.companyName}
@@ -113,7 +116,7 @@ function App() {
                 name="customerName"
                 value={inputs.customerName || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[100%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[100%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
             </label>
           </div>
@@ -129,11 +132,6 @@ function App() {
               </p>
             </div>
             <Search placeholder="Text" data={CData} />
-            {/* <input
-              type="text"
-              placeholder="Text"
-              className="border-2 rounded-md pl-2 h-9 mt-6"
-            /> */}
           </div>
 
           <div className="min-w-[100%] justify-start pb-4">
@@ -176,7 +174,7 @@ function App() {
                 name="subrb"
                 value={inputs.subrb || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[90%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[90%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.subrb}
@@ -190,7 +188,7 @@ function App() {
                 name="city"
                 value={inputs.city || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[100%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[100%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.city}
@@ -207,7 +205,7 @@ function App() {
                 name="postcode"
                 value={inputs.postcode || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[90%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[90%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.postcode}
@@ -221,7 +219,7 @@ function App() {
                 name="state"
                 value={inputs.state || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[100%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[100%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.state}
@@ -239,7 +237,7 @@ function App() {
                 value={inputs.email || ''}
                 onChange={handleChange}
                 autoComplete="email"
-                className="border-2 rounded-md min-w-[90%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[90%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
             </label>
             <label className="min-w-[50%]">
@@ -250,12 +248,12 @@ function App() {
                 name="telephone"
                 value={inputs.telephone || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[100%] pl-2 h-9"
+                className="border-2 rounded-md min-w-[100%] pl-2 h-9 md:w-[20%] w-[90%]"
               />
             </label>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end mb-4">
             <button className="text-white pt-2 pb-2 pr-4 pl-4 rounded-md bg-red-500">
               Cancel
             </button>
