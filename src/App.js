@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import isEmpty from 'validator/lib/isEmpty'
-// import Address from './components/adddress/Address'
+import Search from './components/adddress/Search'
+import CData from './CT_DATA.json'
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -23,6 +24,7 @@ function App() {
     const value = event.target.value
     setInputs((values) => ({ ...values, [name]: value }))
   }
+
   const [validationMsg, setValidationMsg] = useState('')
 
   const validateAll = () => {
@@ -97,7 +99,7 @@ function App() {
                 name="companyName"
                 value={inputs.companyName || ''}
                 onChange={handleChange}
-                className="border-2 rounded-md min-w-[90%] pl-2 h-9"
+                className={`border-2 rounded-md min-w-[90%] pl-2 h-9`}
               />
               <p className="text-red-400 text-sx italic">
                 {validationMsg.companyName}
@@ -126,11 +128,12 @@ function App() {
                 to pre-populate
               </p>
             </div>
-            <input
+            <Search placeholder="Text" data={CData} />
+            {/* <input
               type="text"
               placeholder="Text"
               className="border-2 rounded-md pl-2 h-9 mt-6"
-            />
+            /> */}
           </div>
 
           <div className="min-w-[100%] justify-start pb-4">
