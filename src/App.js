@@ -3,6 +3,7 @@ import './App.css'
 import isEmpty from 'validator/lib/isEmpty'
 import Search from './components/adddress/Search'
 import CData from './CT_DATA.json'
+import LocationSearchInput from './components/adddress/Search'
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -131,7 +132,8 @@ function App() {
                 to pre-populate
               </p>
             </div>
-            <Search placeholder="Text" data={CData} />
+            {/* <Search placeholder="Text" data={CData} /> */}
+            <Search />
           </div>
 
           <div className="min-w-[100%] justify-start pb-4">
